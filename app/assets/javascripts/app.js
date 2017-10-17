@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           let newTask = {
             text: this.newTaskText,
             priority: this.newTaskPriority,
-          }
+          };
           this.tasks.push(newTask);
           this.newTaskText = "";
           this.newTaskPriority = "";
@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var index = this.tasks.indexOf(currentTask);
         this.tasks.splice(index, 1);
       },
-      sortTasks: function() {
-        
+      prioritize: function(taskArray) {
+        return taskArray.sort(function(a, b) {
+          return b.priority - a.priority;
+        });
       }
     },
     computed: {
