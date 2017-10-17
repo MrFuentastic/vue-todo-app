@@ -1,0 +1,10 @@
+<div id="app">
+  <h2>Things to do whenever i may or may not get the chance: </h2>
+  <div v-for="task in tasks" v-on:click="taskComplete(task)">
+    {{ task.text }}
+  </div>
+  <h4>add stuff to do:</h4>
+  Task:<input v-model="newTaskText">
+  Priority:<input v-model="newTaskPriority">
+  <button v-on:click="addTask()">Add task</button>
+</div>
